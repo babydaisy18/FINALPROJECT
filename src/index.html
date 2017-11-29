@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+				<script src="js/lib/jquery-1.11.3.min.js"></script>
+        <script src="js/lib/underscore-min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/lib/handlebars.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/lib/bootstrap.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <div class="container-fluid" style="display:block;" id="firstPageDiv">
+	<div class="row">
+		<div class="col-md-12">
+			<h3 class="text-center">
+				Horoscope Analyser
+			</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<p class="text-center">
+				Choose your star sign and click Next.
+			</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<img alt="Bootstrap Image Preview" src="http://www.astrology-zodiac-signs.com/images/aries.jpg"> 
+			<input onclick="saveSign(event)" type="button" value="Aries" id="Aries" class="btn btn-default btn-block" />
+		</div>
+		<div class="col-md-4">
+			<img alt="Bootstrap Image Preview" src="http://www.astrology-zodiac-signs.com/images/taurus.jpg"> 
+			<input onclick="saveSign(event)" type="button" value="Taurus" id="Taurus" class="btn btn-default btn-block" />
+		</div>
+		<div class="col-md-4">
+			<img alt="Bootstrap Image Preview" src="http://www.astrology-zodiac-signs.com/images/gemini.jpg"> 
+			<input onclick="saveSign(event)" type="button" value="Gemini" id="Gemini" class="btn btn-default btn-block" />
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<img alt="Bootstrap Image Preview" src="http://www.astrology-zodiac-signs.com/images/cancer.jpg"> 
+			<input onclick="saveSign(event)" type="button" value="Cancer" id="Cancer" class="btn btn-default btn-block" />
+		</div>
+		<div class="col-md-4">
+			<img alt="Bootstrap Image Preview" src="http://www.astrology-zodiac-signs.com/images/leo.jpg"> 
+			<input onclick="saveSign(event)" type="button" value="Leo" id="Leo" class="btn btn-default btn-block" />
+		</div>
+		<div class="col-md-4">
+			<img alt="Bootstrap Image Preview" src="http://www.astrology-zodiac-signs.com/images/virgo.jpg"> 
+			<input onclick="saveSign(event)" type="button" value="Virgo" id="Virgo" class="btn btn-default btn-block" />
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<img alt="Bootstrap Image Preview" src="http://www.astrology-zodiac-signs.com/images/libra.jpg"> 
+			<input onclick="saveSign(event)" type="button" value="Libra" id="Libra" class="btn btn-default btn-block" />
+		</div>
+		<div class="col-md-4">
+			<img alt="Bootstrap Image Preview" src="http://www.astrology-zodiac-signs.com/images/scorpio.jpg"> 
+			<input onclick="saveSign(event)" type="button" value="Scorpio" id="Scorpio" class="btn btn-default btn-block" />
+		</div>
+		<div class="col-md-4">
+			<img alt="Bootstrap Image Preview" src="http://www.astrology-zodiac-signs.com/images/sagittarius.jpg">
+			<input onclick="saveSign(event)" type="button" value="Sagittarius" id="Sagittarius" class="btn btn-default btn-block" />
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<img alt="Bootstrap Image Preview" src="http://www.astrology-zodiac-signs.com/images/capricorn.jpg"> 
+			<input onclick="saveSign(event)" type="button" value="Capricorn" id="Capricorn" class="btn btn-default btn-block" />
+		</div>
+		<div class="col-md-4">
+			<img alt="Bootstrap Image Preview" src="http://www.astrology-zodiac-signs.com/images/aquarius.jpg"> 
+			<input onclick="saveSign(event)" type="button" value="Aquarius" id="Aquarius" class="btn btn-default btn-block" />
+		</div>
+		<div class="col-md-4">
+			<img alt="Bootstrap Image Preview" src="http://www.astrology-zodiac-signs.com/images/pisces.jpg"> 
+			<input onclick="saveSign(event)" type="button" value="Pisces" id="Pisces" class="btn btn-default btn-block" />
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+		</div>
+		<div class="col-md-4">
+		</div>
+		<div class="col-md-4">
+			 <input onclick="nextPage()" type="button" value="Next" id="nextButton1" class="btn btn-block btn-lg" />
+		</div>
+	</div>
+</div>
+  </body>
+
+
+
+
+  <div class="container-fluid" style="display:none;" id="secondPageDiv">
+	<div class="row">
+		<div class="col-md-12">
+			<h3 class="text-center">
+				Horoscope Analyser
+			</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<p id="date">
+			</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<p>
+				Pick horoscope services you would like to use:
+			</p>
+		</div>
+	</div>
+
+
+	<div class="dropdown">
+  	<button onclick="myFunction()" class="dropbtn">Options</button>
+	  <div id="myDropdown" class="dropdown-content">
+	    <button onclick="whatDo(event);" class="btn btn-default btn-block" id="Elle">Elle</button>
+	    <button onclick="whatDo(event);" class="btn btn-default btn-block" id="Broadly">Broadly (Vice)</button>
+	    <button onclick="whatDo(event);" class="btn btn-default btn-block" id="Betches">Betches</button>
+	    <button onclick="whatDo(event);" class="btn btn-default btn-block" id="Cosmo">Cosmopolitan</button>
+	    <button onclick="whatDo(event);" class="btn btn-default btn-block" id="NYPost">New York Post</button>
+	    <button onclick="whatDo(event);" class="btn btn-default btn-block" id="NYDaily">NY Daily News</button>
+	  </div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-4">
+			<h3 class="text-left">
+				 Website
+			</h3>
+			<ul style="list-style-type: none" id="websiteText">
+					<li> <p id="ElleText" style="display:none;">Elle</p>  </li>
+					<li> <p id="BroadlyText" style="display:none;">Broadly</p>  </li>
+					<li> <p id="BetchesText" style="display:none;">Betches</p>  </li>
+					<li> <p id="CosmoText" style="display:none;">Cosmo</p>  </li>
+					<li> <p id="NYPostText" style="display:none;">NY Post</p>  </li>
+					<li> <p id="NYDailyText" style="display:none;">NY Daily</p>  </li>
+			</ul>
+		</div>
+		<div class="col-md-4">
+		</div>
+		<div class="col-md-4">
+			<h3 class="text-left">
+				Action
+			</h3> 
+				<ul style="list-style-type: none; zoom:1; *display: inline; display: inline-block;" id="webList">
+					<li> <input onclick="change(event)" type="button" value="Favorite" id="favButtonElle" style="display:none;"/> </li>
+					<li> <input onclick="change(event)" type="button" value="Favorite" id="favButtonBroadly" style="display:none;"/> </li>
+					<li> <input onclick="change(event)" type="button" value="Favorite" id="favButtonBetches" style="display:none;"/> </li>
+					<li> <input onclick="change(event)" type="button" value="Favorite" id="favButtonCosmo" style="display:none;"/> </li>
+					<li> <input onclick="change(event)" type="button" value="Favorite" id="favButtonNYPost" style="display:none;"/> </li>
+					<li> <input onclick="change(event)" type="button" value="Favorite" id="favButtonNYDaily" style="display:none;"/> </li>
+				</ul>
+				<ul style="list-style-type: none; zoom:1; *display: inline; display: inline-block;" id="webList">
+					<li> <input onclick="change(event)" type="button" value="Delete" id= "deleteButtonElle" style="display:none;" /> </li>
+					<li> <input onclick="change(event)" type="button" value="Delete" id= "deleteButtonBroadly" style="display:none;" /> </li>
+					<li> <input onclick="change(event)" type="button" value="Delete" id= "deleteButtonBetches" style="display:none;" /> </li>
+					<li> <input onclick="change(event)" type="button" value="Delete" id= "deleteButtonCosmo" style="display:none;" /> </li>
+					<li> <input onclick="change(event)" type="button" value="Delete" id= "deleteButtonNYPost" style="display:none;" /> </li>
+					<li> <input onclick="change(event)" type="button" value="Delete" id= "deleteButtonNYDaily" style="display:none;" /> </li>
+				</ul>
+			<p class="text-left">
+
+				<br>
+				<br>
+				<br>
+				<br>
+            
+			</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<input onclick="backPage()" type="button" value="Back" id="backButton1" class="btn btn-block btn-lg" />
+		</div>
+		<div class="col-md-4">
+		</div>
+		<div class="col-md-4">
+			<input onclick="nextPage()" type="button" value="Next" id="nextButton2" class="btn btn-block btn-lg" />
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+<div class="container-fluid" style="display:none;" id="thirdPageDiv">
+	<div class="row">
+		<div class="col-md-12">
+			<h3 class="text-center">
+				Horoscope Analyser
+			</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<p>
+				Your Daily Horoscope:
+			</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<p>
+				INSERT DAILY HOROSCOPE TEXT HERE
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+			</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			 
+			<input onclick="backPage()" type="button" value="Back" id="backButton2" class="btn btn-block btn-lg" />
+		</div>
+		<div class="col-md-4">
+		</div>
+		<div class="col-md-4">
+		</div>
+	</div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script>
+</html>
