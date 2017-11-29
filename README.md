@@ -5,7 +5,7 @@ Backbone web application. Uses following concepts from class: socket.io, handleb
 
 When the Client enters the app, she’s given the option to choose one of the twelve star signs. This will then redirect her to a page with 6 options for astrology services and prompt her to choose her favorite (ex. Broadly daily horoscope). The information drawn from that website’s text will appear and the user can click a button to view similarity analyses.
 
-The app will draw from 6-10 different daily horoscope sites (Broadly, Cosmo, Betches, Elle, etc.) and use some form of text analysis similar to the one we used in HW2 to return the most frequent words and phrases for a particular day’s horoscope. The application is modeled similarly to HW5 (Backbone):
+The app will draw from 6-10 different daily horoscope sites (Broadly, Cosmo, Betches, Elle, etc.) using a webscraper (most likely Cheerio or PhantomJS) and use some form of text analysis similar to the one we used in HW2 to return the most frequent words and phrases for a particular day’s horoscope. The application is modeled similarly to HW5 (Backbone):
 
 Views:
 SingleHoroscopeView
