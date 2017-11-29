@@ -1,7 +1,7 @@
 # FINALPROJECT
 
 
-Backbone web application. Uses following concepts from class: socket.io, handlebars.js, HTML/CSS and jquery, and underscore.js library. 
+Backbone web application. Uses following concepts from class: socket.io with an Express server, handlebars.js, HTML/CSS and jquery, and underscore.js library. 
 
 When the Client enters the app, she’s given the option to choose one of the twelve star signs. This will then redirect her to a page with 6 options for astrology services and prompt her to choose her favorite (ex. Broadly daily horoscope). The information drawn from that website’s text will appear and the user can click a button to view similarity analyses.
 
