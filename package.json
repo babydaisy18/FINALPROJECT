@@ -1,0 +1,16 @@
+{
+  "name": "node-web-scrape",
+  "version": "0.0.1",
+  "description": "Scrape le web.",
+  "main": "server.js",
+  "author": "Scotch",
+  "dependencies": {
+    "casper": "^0.1.1",
+    "casperjs": "^1.1.4",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "latest",
+    "request": "latest",
+    "spooky": "^0.2.5",
+    "tiny-jsonrpc": "^2.0.1"
+  }
+}
