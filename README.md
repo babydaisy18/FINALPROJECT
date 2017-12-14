@@ -1,5 +1,15 @@
 # FINALPROJECT
 
+ULTIMATE PROJECT:
+
+Tried doing the webscraping a few different ways -- with an express server, with cheeriojs. The implementation that ended up working the best was using PhantomJS, CasperJS and SpookyJS, which is what I then used to write my serverside code, contradicting my initial project proposal.
+
+Demo works for Leo star sign only, and some websites/horoscope services had to be changed. Ex. a problem I ran into when trying to scrape data from Broadly was that the output from "fetchText("body")" contained different HTML than the one on the actual site. This was because Broadly was not containing any of the actual content on the page, but instead using lots of heavy JS to fetch and organize it. Casper is not able to parse JS that easily, so I switched over to some older websites with simpler structure and used SpookyJS to integrate things with the rest of my node modules for analysis etc. 
+
+Current state of the project is that it grabs new info every time the page refreshes -- it will return the correct data for my horoscope from day to day. I did not end up implementing the similarity analysis, but parsed the data into String arrays for a possible future implementation of this. This data prints out in console/terminal.
+
+
+INITIAL PROPOSAL:
 
 Backbone web application. Uses following concepts from class: socket.io with an Express server, handlebars.js, HTML/CSS and jquery, and underscore.js library. 
 
